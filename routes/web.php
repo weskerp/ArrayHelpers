@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('app', AppController::class);
 Route::get('/', function () {
-    return view('app');
+    return view('welcome');
 });
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/tutorial', function () {
+    return view('tutorial');
+});
